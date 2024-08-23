@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Matemasie&display=swap');
+
+.header {
+    padding-inline: 40px;
+    background-image: linear-gradient(to right, #e372ff, #fcf3ff);
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    font-family: "Matemasie", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    color: #470052;
+}
+
+.header-theme-container {
+    display: flex;
+    align-items: center;
+}
+
+.theme-btn {
+    margin-right: 40px;
+    background-color: transparent;
+    border: none;
+    color: #e372ff;
+    cursor: pointer;
+}
+
+.theme-btn-dark {
+    margin-right: 40px;
+    background-color: transparent;
+    border: none;
+    color: #470052;
+    cursor: pointer;
+}
+
+.header-login-btn {
+    text-transform: capitalize !important;
+}
+
+.header-login-btn:hover {
+    background-color: #9d15b6 !important;
+}

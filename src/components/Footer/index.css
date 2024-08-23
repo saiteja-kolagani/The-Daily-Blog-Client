@@ -1,0 +1,19 @@
+.footer {   
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #fcf3ff;
+    text-align: center;
+}
+
+.footer p span {
+    color: #470052;
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 600;
+}
+
+.footer p {
+    font-size: 13px;
+    color: black;
+}
