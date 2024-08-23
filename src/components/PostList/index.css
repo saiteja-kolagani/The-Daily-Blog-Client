@@ -1,0 +1,36 @@
+.posts-conatiner {
+    padding-inline: 80px;
+    border-top: 1px solid #480052;
+}
+
+.posts-conatiner h1 {
+    text-align: center;
+    font-size: 30px;
+    color: #480052;
+}
+
+.posts-conatiner ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding-inline: 80px;
+    padding-block: 40px;
+    flex-wrap: wrap;
+}
+
+.a-link {
+    text-decoration: none;
+}
+
+.list-post {
+    margin: 20px;
+}
+
+.card {
+    box-shadow: 0px 4px 16px 0px #480052;
+}
+
+.card-style {
+    box-shadow: 0px 4px 16px 0px #e373ff !important;
+    border: 2px solid red !important;
+}

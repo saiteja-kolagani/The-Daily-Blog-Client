@@ -1,19 +1,18 @@
 import React, { Component } from 'react';
 import Cookies from 'js-cookie';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import Button from '@mui/material/Button';
 
 import { API_URL } from '../../data/apiPath';
 
-import './index.css'
+import './index.css';
 
 class Login extends Component {
   state = {
-    username: '',
+    email: '',
     password: '',
     error: ''
   };
-
 
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
@@ -28,7 +27,7 @@ class Login extends Component {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        username: this.state.username,
+        email: this.state.email,
         password: this.state.password
       })
     })
@@ -38,11 +37,13 @@ class Login extends Component {
           Cookies.set('token', data.token, { expires: 1 });
           alert('Login Successfully');
           this.setState({
-            username: '',
-            password: ''
-          })
+            email: '',
+            password: '',
+            error: ''
+          });
+          this.props.navigate('/');
         } else {
-          this.setState({ error: 'Login failed. Please check your credentials.' });
+          this.setState({ error: data.error || 'Login failed. Please check your credentials.' });
         }
       })
       .catch(error => {
@@ -52,14 +53,14 @@ class Login extends Component {
   };
 
   render() {
-    const {theme} = this.props
-    const styleForm = theme ? null : {backgroundImage: 'radial-gradient(#480151, #9d15b6)'};
-    const styleHeading = theme ? null : {color: "#e372ff"};
-    const labelStyle = theme ? null : {color: "#e372ff"}
-    const linkStyle = theme ? null : {color: "#e372ff"}
+    const { theme } = this.props;
+    const styleForm = theme ? null : { backgroundImage: 'radial-gradient(#480151, #9d15b6)' };
+    const styleHeading = theme ? null : { color: "#e372ff" };
+    const labelStyle = theme ? null : { color: "#e372ff" };
+    const linkStyle = theme ? null : { color: "#e372ff" };
+
     return (
       <div className='login-container'>
-
         <form onSubmit={this.handleSubmit} style={styleForm} className='login-form'>
           <h1 style={styleHeading}>Sign In</h1>
           <div className='input-container'>
@@ -67,8 +68,8 @@ class Login extends Component {
             <br />
             <input
               type="text"
-              name="username"
-              value={this.state.username}
+              name="email"
+              value={this.state.email}
               onChange={this.handleChange}
               placeholder="Enter Email"
               required
@@ -92,9 +93,9 @@ class Login extends Component {
           <Button variant="contained" className='sign-in-btn' type='submit'>
             Sign in
           </Button>
-          {this.state.error && <p>{this.state.error}</p>}
+          {this.state.error && <p className='error-msg'>{this.state.error}</p>}
           <Link to="/register" style={linkStyle} className='link-login-form'>New User? Sign Up here</Link>
-      </form>
+        </form>
       </div>
     );
   }
