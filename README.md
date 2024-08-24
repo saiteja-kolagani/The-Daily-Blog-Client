@@ -1,70 +1,126 @@
-# Getting Started with Create React App
+### The Daily Blog Frontend Documentation
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### Overview
+The Daily Blog is a React-based web application that allows users to create, read, update, and delete blog posts. The frontend is built using React and styled using Material-UI components and custom CSS. The application also includes features such as user authentication, theme toggling (light/dark mode), and responsive UI elements.
 
-## Available Scripts
+#### Tech Stack
+- **React**: Core framework for building the user interface.
+- **Material-UI**: For pre-built, customizable UI components.
+- **CSS**: Custom styling for components and layout.
+- **React Router**: For handling navigation and routing.
+- **js-cookie**: For managing cookies, including storing and accessing JWT tokens.
+- **react-loader-spinner**: For displaying loading indicators.
+  
+#### Key Features
 
-In the project directory, you can run:
+1. **Authentication**
+   - User login and registration pages.
+   - Cookies are used to store JWT tokens for session management.
+   - Authenticated users can create, edit, and delete posts.
 
-### `npm start`
+2. **Theme Toggling**
+   - Users can switch between light and dark themes.
+   - Theme preference is stored in `localStorage` to persist across sessions.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+3. **Material-UI Integration**
+   - **Buttons**: Material-UI buttons are used for actions like signing in, signing out, and toggling the theme.
+   - **Icons**: Material-UI icons (e.g., `Home`, `Person`, `LightMode`, `DarkMode`) enhance the visual appeal and make navigation intuitive.
+   - **Menu**: The application uses Material-UI’s `Menu` and `MenuItem` components for dropdown menus (e.g., the "Menu" button in the header).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+4. **Post Management**
+   - Users can view a list of public posts.
+   - Authenticated users can create new posts, edit existing ones, and delete their own posts.
+   - Posts are displayed in a card layout using custom CSS, with truncated previews for readability.
 
-### `npm test`
+5. **Responsive Design**
+   - The application is fully responsive and adapts to different screen sizes.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Folder Structure
+```
+src/
+│
+├── components/
+│   ├── Header/                 # Contains the Header component with Material-UI menu and theme toggling
+│   ├── Footer/                 # Footer component
+│   ├── PostList/               # Displays the list of public posts
+│   ├── PostDetail/             # Displays the details of a single post
+│   ├── PostForm/               # Form component for creating/editing posts
+│   ├── Profile/                # User profile page displaying user-specific posts
+│   └── Login/                  # Contains the Login and Register components
+│
+├── data/
+│   └── apiPath.js              # API URL configurations
+│
+├── App.js                      # Main component handling routing and theme logic
+├── index.css                   # Global styles
+└── index.js                    # Entry point of the React application
+```
 
-### `npm run build`
+#### How to Run the Application Locally
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Install Dependencies**:
+   - Clone the repository.
+   - Navigate to the project directory and run:
+     ```bash
+     npm install
+     ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. **Start the Development Server**:
+   - Run the development server using:
+     ```bash
+     npm start
+     ```
+   - The application will be available at `http://localhost:3000`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. **Environment Variables**:
+   - Ensure that the API URL is correctly set in `data/apiPath.js` to point to the backend API.
 
-### `npm run eject`
+4. **Build for Production**:
+   - To create an optimized production build, run:
+     ```bash
+     npm run build
+     ```
+   - This will generate the build files in the `build/` directory.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### Usage of Material-UI
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Buttons**:
+  Material-UI's `Button` component is used throughout the application for consistent and styled action buttons. For example, in the header:
+  ```javascript
+  <Button variant="contained" disableElevation style={{ backgroundColor: "#d23df8" }} onClick={logOutHandler}>
+    Sign Out
+  </Button>
+  ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **Icons**:
+  Icons from Material-UI are used to enhance the UI, such as the `HomeIcon`, `AddIcon`, `PersonIcon`, `LightModeIcon`, and `DarkModeIcon`.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **Menu**:
+  The dropdown menu in the header utilizes Material-UI's `Menu` and `MenuItem` components:
+  ```javascript
+  <Menu
+    id="basic-menu"
+    anchorEl={anchorEl}
+    open={open}
+    onClose={handleClose}
+  >
+    <MenuItem onClick={() => { handleClose(); navigate('/'); }}>Home</MenuItem>
+    ...
+  </Menu>
+  ```
 
-## Learn More
+#### Theme Management
+The theme (light/dark) is toggled using a button in the header. The user's preference is stored in `localStorage`, and the application checks this value on load to persist the chosen theme across sessions.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```javascript
+const themeHandler = () => {
+  localStorage.setItem("theme", !theme);
+  setTheme(!theme);
+};
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Future Enhancements
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **Profile Customization**: Allow users to customize their profile with additional information.
+- **Comment System**: Enable users to add comments to posts.
+- **Search Functionality**: Add a search bar to filter posts by title or content.
