@@ -38,7 +38,14 @@ const UserPosts = ({ theme }) => {
 
   const truncateTextByCharacters = (text) => {
     if (text.length > 40) {
-      return text.substring(0, 40) + '...';
+      return text.substring(0, 70) + '...';
+    }
+    return text;
+  };
+
+  const truncateTitleByCharacters = (text) => {
+    if (text.length > 40) {
+      return text.substring(0, 50) + '...';
     }
     return text;
   };
@@ -62,13 +69,13 @@ const UserPosts = ({ theme }) => {
       <h1 className='welcome-text'>
         Welcome <span className='username-text'>{posts[0]?.username}</span>
       </h1>
-      <h1 style={styleHeading}>Your Posts</h1>
+      <h1 style={styleHeading} className='your-post'>Your Posts</h1>
       <ul>
         {posts.map(post => (
           <li key={post.id} className='my-post-card'>
             <Link to={`/post/${post.id}`} className='link-post-card'>
               <p className='post-id'><span className='post-heading-span'>Post ID: </span>{post.id}</p>
-              <h1 className='post-title'><span className='post-heading-span'>Title: </span>{post.title}</h1>
+              <h1 className='post-title'><span className='post-heading-span'>Title: </span>{truncateTitleByCharacters(post.title)}</h1>
               <p className='post-content'><span className='post-heading-span'>Content: </span>{truncateTextByCharacters(post.content)}</p>
               <p className='post-date'><span className='post-heading-span'>Created at: </span>{post.created_at}</p>
             </Link>

@@ -4,7 +4,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-inline: 80px;
+    padding-inline: 100px;
+    padding-block-end: 90px;
 }
 
 .post-id {
@@ -47,4 +48,9 @@
 
 .edit-icon {
     margin-left: 6px;
+}
+
+.post-details-heading {
+    text-align: center;
+    letter-spacing: 1px !important;
 }

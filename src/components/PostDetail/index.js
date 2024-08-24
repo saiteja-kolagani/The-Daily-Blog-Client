@@ -29,7 +29,7 @@ const PostDetail = ({theme}) => {
   return (
     <div className='post-detail-container'>
       <p style={styleDetails} className='post-id'>{`Post ID ${post.id}`}</p>
-      <h1 style={styleTitle}>{post.title}</h1>
+      <h1 className='post-details-heading' style={styleTitle}>{post.title}</h1>
       <p style={styleContent} className='post-content'>{post.content}</p>
       <p style={styleDetails} className='post-details'>
         {`Created at ${post.created_at}, Created by `}
