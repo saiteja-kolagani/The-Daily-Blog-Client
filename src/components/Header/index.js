@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Cookies from 'js-cookie';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import Button from '@mui/material/Button';
@@ -9,6 +9,8 @@ import AddIcon from '@mui/icons-material/Add';
 import PersonIcon from '@mui/icons-material/Person';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+import LoginIcon from '@mui/icons-material/Login';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 import './index.css';
 
@@ -87,13 +89,13 @@ const Header = ({ theme, setTheme }) => {
                   <PersonIcon className='header-icon' style={{ fontSize: 20 }} /> Profile
                 </MenuItem>
                 <MenuItem onClick={() => { handleClose(); logOutHandler(); }}>
-                  Sign Out
+                  Sign Out <LogoutIcon style={{marginLeft: '4px'}} />
                 </MenuItem>
               </>
             )}
             {!token && (
               <MenuItem onClick={() => { handleClose(); loginHandler(); }}>
-                Sign In
+                <LoginIcon style={{marginRight: '4px'}} /> Sign In
               </MenuItem>
             )}
           </Menu>
