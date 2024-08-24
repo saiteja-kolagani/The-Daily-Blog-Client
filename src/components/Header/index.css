@@ -3,6 +3,7 @@
 .header {
     padding-inline: 40px;
     background-image: linear-gradient(to right, #e372ff, #fcf3ff);
+    padding-block: 12px;
 }
 
 .nav-bar {
