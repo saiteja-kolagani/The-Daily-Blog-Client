@@ -46,3 +46,30 @@
 .header-login-btn:hover {
     background-color: #9d15b6 !important;
 }
+
+.header-ul {
+    display: flex;
+    list-style: none;
+    padding: 0px;
+    align-items: center;
+}
+
+.header-ul li {
+    margin-inline: 15px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.link-header {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.header-icon {
+    margin-right: 5px;
+}
+
+.link-header:hover {
+    color: #d13df8;
+}

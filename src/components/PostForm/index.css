@@ -18,9 +18,21 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 400px;
+    height: 440px;
     width: 340px;
     background-image: radial-gradient(#fcf3ff, #e372ff);
     border-radius: 12px;
     box-shadow: 0px 4px 16px 0px #480151;
+}
+
+.or-post {
+    font-size: 10px;
+    font-weight: 600;
+    margin-block: 5px;
+    color: #480151;
+}
+
+.error-message {
+    color: darkred;
+    font-size: 12px;
 }

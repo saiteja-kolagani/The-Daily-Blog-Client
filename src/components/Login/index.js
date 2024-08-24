@@ -33,8 +33,11 @@ class Login extends Component {
     })
       .then(response => response.json())
       .then(data => {
+        console.log(data);
         if (data.token) {
           Cookies.set('token', data.token, { expires: 1 });
+          localStorage.setItem('userId', data.user.id);
+          localStorage.setItem('email', data.user.email);
           alert('Login Successfully');
           this.setState({
             email: '',

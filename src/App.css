@@ -13,3 +13,10 @@ body {
   min-height: 89.1vh;
   background-image: linear-gradient(#fcf3ff, #f9e7ff, #f3ceff);
 }
+
+.loader-container {
+  min-height: 89.1vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

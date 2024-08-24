@@ -11,7 +11,7 @@
 
 .posts-conatiner ul {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     list-style: none;
     padding-inline: 80px;
     padding-block: 40px;
@@ -23,7 +23,7 @@
 }
 
 .list-post {
-    margin: 20px;
+    margin: 21px;
 }
 
 .card {

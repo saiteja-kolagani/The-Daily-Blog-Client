@@ -1,0 +1,80 @@
+.profile-container {
+    border-top: 1px solid #470052;
+    min-height: 89.1vh;
+    padding-inline: 80px;
+}
+
+.profile-container-empty {
+    border-top: 1px solid #470052;
+    min-height: 89.1vh;
+    padding-inline: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-container-empty p {
+    font-size: 20px;
+    color: #470052;
+}
+
+.profile-container h1 {
+    text-align: center;
+    font-size: 30px;
+    color: #470052;
+}
+
+.profile-container ul {
+    list-style-type: none;
+    padding: 0px;
+    padding-inline: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    padding-block-end: 40px;
+}
+
+.my-post-card {
+    margin: 21px;
+    width: 340px;
+    height: 220px;
+    padding: 20px;
+    background-image: linear-gradient(to right, #fcf3ff, #f9e7ff, #f3ceff);
+    box-shadow: 0px 4px 16px 0px #470052;
+    border-radius: 8px;
+}
+
+.post-id {
+    font-size: 14px;
+}
+
+.post-title {
+    font-size: 24px !important;
+    text-align: start !important;
+}
+
+.post-content {
+    font-size: 18px !important;
+}
+
+.post-date {
+    font-size: 13px;
+    color: #9c14b7;
+}
+
+.post-heading-span {
+    color: #6c157a;
+    font-weight: 600;
+}
+
+.link-post-card {
+    text-decoration: none;
+}
+
+.welcome-text {
+    text-align: start !important;
+}
+
+.username-text {
+    font-size: 40px !important;
+    color: #b81ddc;
+}

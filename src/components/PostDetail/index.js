@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
+import EditIcon from '@mui/icons-material/Edit';
 import { API_URL } from '../../data/apiPath';
 
 import './index.css'
@@ -31,11 +32,11 @@ const PostDetail = ({theme}) => {
       <h1 style={styleTitle}>{post.title}</h1>
       <p style={styleContent} className='post-content'>{post.content}</p>
       <p style={styleDetails} className='post-details'>
-  {`Created at ${post.created_at}, Created by `}
-  <span>{post.user_name}</span>
-  {`, User ID ${post.user_id}`}
-</p>
-
+        {`Created at ${post.created_at}, Created by `}
+        <span>{post.user_name}</span>
+        {`, User ID ${post.user_id}`}
+      </p>
+      <Link to={`/create-post/${id}`} className='link-details'>Edit <EditIcon className='edit-icon' style={{fontSize: 20}} /></Link>
     </div>
   );
 };
