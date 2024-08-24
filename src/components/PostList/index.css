@@ -1,6 +1,7 @@
 .posts-conatiner {
     padding-inline: 80px;
     border-top: 1px solid #480052;
+    padding-bottom: 30px;
 }
 
 .posts-conatiner h1 {
