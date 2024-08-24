@@ -18,11 +18,17 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 440px;
+    height: 460px;
     width: 340px;
     background-image: radial-gradient(#fcf3ff, #e372ff);
     border-radius: 12px;
     box-shadow: 0px 4px 16px 0px #480151;
+}
+
+@media screen and (max-width: 600px) {
+    .post-form-container {
+        width: 290px !important;
+    }
 }
 
 .or-post {

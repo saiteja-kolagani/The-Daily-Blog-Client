@@ -8,6 +8,19 @@
     padding-block-end: 90px;
 }
 
+@media screen and (max-width: 600px) {
+    .post-detail-container {
+        padding-inline: 30px;
+        text-align: center;
+    }
+    .post-details-heading {
+        font-size: 16px !important;
+    }
+    .post-content {
+        font-size: 14px !important;
+    }
+}
+
 .post-id {
     color: #9e15b6;
     font-size: 14px;

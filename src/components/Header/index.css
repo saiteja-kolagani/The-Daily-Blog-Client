@@ -73,3 +73,26 @@
 .link-header:hover {
     color: #d13df8;
 }
+
+@media screen and (max-width: 600px) {
+    .home-section-link {
+        display: none;
+    }
+    .header-theme-container {
+        display: none;
+    }
+    .header-ul {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 601px) {
+    .menu{
+        display: none;
+    }
+}
+
+.home-section-link {
+    display: flex;
+    align-items: center;
+}

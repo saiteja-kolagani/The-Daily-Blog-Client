@@ -70,7 +70,7 @@ const UserPosts = ({ theme }) => {
         Welcome <span className='username-text'>{posts[0]?.username}</span>
       </h1>
       <h1 style={styleHeading} className='your-post'>Your Posts</h1>
-      <ul>
+      <ul className='profile-unordered-container'>
         {posts.map(post => (
           <li key={post.id} className='my-post-card'>
             <Link to={`/post/${post.id}`} className='link-post-card'>

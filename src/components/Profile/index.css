@@ -5,6 +5,21 @@
     padding-block-end: 30px;
 }
 
+@media screen and (max-width: 600px) {
+    .profile-container{
+        padding-inline: 10px;
+    }
+    .profile-unordered-container {
+        padding-inline: 0px !important;
+    }
+    .welcome-text {
+        font-size: 20px !important;
+    }
+    .username-text {
+        font-size: 24px !important;
+    }
+}
+
 .profile-container-empty {
     border-top: 1px solid #470052;
     min-height: 89.1vh;
@@ -73,11 +88,11 @@
 }
 
 .welcome-text {
-    text-align: start !important;
+    text-align: start;
 }
 
 .username-text {
-    font-size: 40px !important;
+    font-size: 40px;
     color: #b81ddc;
 }
 
