@@ -4,6 +4,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-bottom: 30px;
 }
 
 .post-form h1 {
@@ -18,7 +19,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 460px;
+    height: 550px;
     width: 340px;
     background-image: radial-gradient(#fcf3ff, #e372ff);
     border-radius: 12px;
