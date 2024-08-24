@@ -8,6 +8,7 @@ import PostForm from './components/PostForm';
 import Register from './components/Register';
 import LoginWrapper from './components/Login/LoginWrapper';
 import UserPosts from './components/Profile';
+import NotFound from './components/NotFound';  // Import the NotFound component
 
 import './App.css';
 
@@ -36,6 +37,7 @@ function App() {
             <Route path="/login" element={<LoginWrapper theme={theme} />} />
             <Route path="/register" element={<Register theme={theme} />} />
             <Route path="/profile" element={<UserPosts theme={theme} />} />
+            <Route path="*" element={<NotFound theme={theme} />} />
           </Routes>
         </div>
         <Footer theme={theme} />
