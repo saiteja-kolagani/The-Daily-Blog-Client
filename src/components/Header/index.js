@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Cookies from 'js-cookie';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import Button from '@mui/material/Button';
@@ -101,6 +101,29 @@ const Header = ({ theme, setTheme }) => {
           </Menu>
         </div>
         
+        <div className='home-section-link'>
+          <Link to="/" className='link-header home-section' style={headingStyle}>
+            <HomeIcon className='header-icon' style={{ fontSize: 20 }} /> Home
+          </Link>
+        
+
+        {token && (
+          <ul className='header-ul'>
+            <li key="post">
+              <Link to="/create-post" className='link-header' style={headingStyle}>
+                <AddIcon className='header-icon' style={{ fontSize: 20 }} /> Post
+              </Link>
+            </li>
+            <li key="profile">
+              <Link to="/profile" className='link-header' style={headingStyle}>
+                <PersonIcon className='header-icon' style={{ fontSize: 20 }} /> Profile
+              </Link>
+            </li>
+          </ul>
+        )}
+        </div>
+
+
         <div className='header-theme-container'>
           <button type='button' className={themeStyle} onClick={themeHandler}>
             {theme ? <DarkModeIcon /> : <LightModeIcon />}

@@ -8,7 +8,7 @@ import PostForm from './components/PostForm';
 import Register from './components/Register';
 import LoginWrapper from './components/Login/LoginWrapper';
 import UserPosts from './components/Profile';
-import NotFound from './components/NotFound';  // Import the NotFound component
+import NotFound from './components/NotFound';
 
 import './App.css';
 
